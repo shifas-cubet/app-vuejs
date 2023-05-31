@@ -17,5 +17,7 @@ export default {
     )
 
     app.config.globalProperties.$axios = axios;
+
+    app.provide('axios', axios);
   },
 };

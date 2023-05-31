@@ -12,6 +12,7 @@ import store from '@/store/index.js';
 import UserComponent from '@/components/UserComponent.vue';
 import Home from '@/components/Home.vue';
 import Login from '@/components/Login.vue';
+import CreateUser from '@/components/CreateUser.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -32,6 +33,17 @@ const router = createRouter({
         name: 'Login',
         component: Login,
         props: true
+      },
+      {
+        path: '/create-user',
+        name: 'User-Create',
+        component: CreateUser
+      },
+      {
+        path: '/edit-user/:id',
+        name: 'Edit-User',
+        component: CreateUser,
+        props: true 
       }
     ]
   })
