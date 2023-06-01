@@ -9,8 +9,11 @@ import axiosPlugin from '@/plugins/axios';
 
 import store from '@/store/index.js';
 
-import UserComponent from '@/components/UserComponent.vue';
-import Home from '@/components/Home.vue';
+import uppercase from './directives/uppercase';
+
+
+// import UserComponent from '@/components/UserComponent.vue';
+// import Home from '@/components/Home.vue';
 import Login from '@/components/Login.vue';
 import CreateUser from '@/components/CreateUser.vue';
 
@@ -20,12 +23,12 @@ const router = createRouter({
       {
         path: '/',
         name: 'Home',
-        component: Home
+        component: () => import('@/components/Home.vue')
       },
       {
         path: '/user/:id',
         name: 'User',
-        component: UserComponent,
+        component: () => import('@/components/UserComponent.vue'),
         props: true
       },
       {
@@ -47,8 +50,11 @@ const router = createRouter({
       }
     ]
   })
+
+  // Vue.directive('uppercase', uppercase);
   
   createApp(App)
+  .directive('uppercase', uppercase)
   .use(router)
   .use(store)
   .use(axiosPlugin)

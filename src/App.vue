@@ -4,8 +4,13 @@ import TheWelcome from './components/TheWelcome.vue';
 </script>
 
 <template>
+  <Navbar />
   <router-view></router-view>
 </template>
+
+<script>
+import Navbar from './components/Navbar.vue';
+</script>
 
 <style scoped>
 header {

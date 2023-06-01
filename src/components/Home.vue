@@ -20,10 +20,12 @@
                     <div class="mt-10">
                         <div class="mt-4">
                             <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
-                                <li class="text-gray-400" v-for="user in users">
+                                <li 
+                                class="text-gray-400" v-for="user in users">
                                     <span 
                                     class="text-gray-600 cursor-pointer hover:text-blue-400" 
-                                    @click="selectUser(user)">{{ user.name }}</span>
+                                    @click="selectUser(user)"
+                                    >{{ user.name }}</span>
                                     <span v-if="user?.is_added" class="text-sm text-gray-400">
                                         User is added
                                     </span>
